@@ -1,4 +1,11 @@
 #!/bin/bash
+# http://goo.gl/rxanp
+#
+OUTPUT_FILE=/tmp/ping_to_$1.log
+if [ -f $OUTPUT_FILE ]; then
+  echo "" > $OUTPUT_FILE
+fi
+
 while true
     do
         TIME=`date +%T`
