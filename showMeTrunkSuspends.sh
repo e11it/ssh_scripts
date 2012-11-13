@@ -17,4 +17,4 @@ else
         TAIL=100
 fi
 
-ls -rt /Invade/Logs/Genghis_`pgrep mono`_* | xargs grep "ErrorManager" | grep "suspend" | perl -ne '/(\d{2}:\d{2}:\d{2}).+?(Unsuspended|suspended).*?(\d{1,} seconds)*?$/; print "$1| ".uc($2)." $3\n"' | tail -n $TAIL
+ls -rt /Invade/Logs/Genghis_`pgrep mono`_* | xargs grep "ErrorManager" | grep "suspend" | perl -ne '/(\d{2}:\d{2}:\d{2}).+?Port\s(\S+?)\s(Unsuspended|suspended).*?(\d{1,} seconds)*?$/; print "$1| ".uc($2)."\t$3 $4\n"' | tail -n $TAIL
